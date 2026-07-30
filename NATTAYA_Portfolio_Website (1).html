@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nattaya Asavadechathawat | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f0ece3;
+    --cream-2:#f6f2ea;
+    --cream-card:#fcf8f4;
+    --maroon:#5c1b23;
+    --maroon-deep:#3f1017;
+    --rose:#b08a92;
+    --rose-dark:#8f5f6a;
+    --rose-light:#d4b8be;
+    --gold:#d4a373;
+    --gold-soft:#ebe0d3;
+    --tag-bg:#f0e5d8;
+    --charcoal:#2d2926;
+    --card:#ffffff;
+    --text:#4a3b3e;
+    --radius:22px;
+    --radius-sm:14px;
+    --shadow-sm:0 4px 16px rgba(92,27,35,0.06);
+    --shadow-md:0 10px 30px rgba(92,27,35,0.08);
+    --shadow-lg:0 18px 40px rgba(92,27,35,0.14);
+    --shadow-xl:0 24px 50px rgba(92,27,35,0.16);
+    --ease:cubic-bezier(.4,0,.2,1);
+    --transition:0.28s var(--ease);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(176,138,146,0.14), transparent),
+      radial-gradient(ellipse 60% 40% at 100% 50%, rgba(212,163,115,0.08), transparent),
+      var(--cream);
+    color:var(--maroon);
+    font-family:'Sarabun', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{
+    background:rgba(92,27,35,0.18);
+    color:var(--maroon);
+  }
+  h1,h2,h3,.display{font-family:'Poppins','Sarabun',sans-serif;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  img{display:block; max-width:100%;}
+
+  /* NAV */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(240,236,227,0.88);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(92,27,35,0.07);
+    box-shadow:0 1px 0 rgba(255,255,255,0.5) inset;
+  }
+  nav{
+    max-width:1300px; margin:0 auto;
+    display:flex; justify-content:flex-end; align-items:center;
+    gap:clamp(10px,1.8vw,28px);
+    padding:18px 32px;
+    flex-wrap:wrap;
+  }
+  nav a{
+    font-family:'Poppins',sans-serif;
+    font-weight:600; font-size:13px; letter-spacing:.06em;
+    color:var(--rose-dark); text-transform:uppercase;
+    padding:8px 14px; border-radius:999px;
+    border:1.5px solid transparent;
+    transition:color var(--transition), background var(--transition),
+               border-color var(--transition), transform var(--transition);
+    white-space:nowrap;
+  }
+  nav a:hover{
+    color:var(--maroon);
+    background:rgba(255,255,255,0.55);
+    border-color:rgba(92,27,35,0.1);
+  }
+  nav a.active{
+    color:#fff;
+    background:var(--maroon);
+    border-color:var(--maroon);
+    box-shadow:0 4px 14px rgba(92,27,35,0.22);
+  }
+
+  section{
+    max-width:1300px; margin:0 auto;
+    padding:clamp(72px,10vw,100px) 32px;
+    scroll-margin-top:80px;
+  }
+  section + section{
+    border-top:1px solid rgba(92,27,35,0.06);
+  }
+
+  /* HERO */
+  #home{
+    padding-top:clamp(48px,8vw,72px);
+    padding-bottom:clamp(60px,8vw,80px);
+    text-align:center;
+    position:relative;
+    border-top:none !important;
+  }
+  #home::before{
+    content:"";
+    position:absolute; inset:0;
+    background:radial-gradient(circle at 50% 30%, rgba(176,138,146,0.1), transparent 55%);
+    pointer-events:none;
+  }
+  .hero-title{
+    font-size:clamp(64px,13vw,168px);
+    font-weight:800;
+    color:var(--rose);
+    line-height:.92;
+    letter-spacing:-.02em;
+    text-shadow:4px 6px 0 rgba(92,27,35,0.06);
+    user-select:none;
+    position:relative;
+  }
+  .hero-photo-wrap{
+    width:min(300px,52vw);
+    aspect-ratio:1/1.12;
+    margin:-5% auto 0;
+    position:relative;
+    z-index:2;
+  }
+  .hero-photo-wrap::before{
+    content:"";
+    position:absolute; inset:-8px;
+    border-radius:50% 50% 46% 46% / 55% 55% 45% 45%;
+    background:linear-gradient(145deg, var(--rose-light), var(--gold));
+    opacity:0.45;
+    z-index:-1;
+  }
+  .hero-photo-wrap img{
+    width:100%; height:100%; object-fit:cover;
+    border-radius:50% 50% 46% 46% / 55% 55% 45% 45%;
+    box-shadow:var(--shadow-xl);
+    border:4px solid rgba(255,255,255,0.85);
+    transition:transform var(--transition), box-shadow var(--transition);
+  }
+  .hero-photo-wrap:hover img{
+    transform:translateY(-4px) scale(1.01);
+    box-shadow:0 28px 56px rgba(92,27,35,0.2);
+  }
+  .name-arc{
+    margin-top:12px;
+    display:flex; justify-content:center;
+    position:relative; z-index:2;
+  }
+  .name-arc svg{ width:min(640px,92vw); height:auto; }
+  .name-arc text{
+    font-family:'Poppins',sans-serif; font-weight:800;
+    font-size:29px; letter-spacing:.06em;
+    fill:var(--maroon);
+  }
+  .hero-tagline{
+    margin-top:28px;
+    display:inline-block;
+    font-size:16px; color:var(--rose-dark); font-weight:500;
+    padding:10px 22px;
+    background:rgba(255,255,255,0.5);
+    border:1px solid rgba(92,27,35,0.08);
+    border-radius:999px;
+    backdrop-filter:blur(6px);
+  }
+
+  /* SECTION HEADINGS */
+  .sec-title{
+    font-size:clamp(30px,4vw,44px);
+    font-weight:800;
+    color:var(--maroon);
+    margin-bottom:42px;
+    position:relative;
+    display:inline-block;
+  }
+  .sec-title::after{
+    content:"";
+    display:block;
+    width:48px; height:4px;
+    margin-top:12px;
+    border-radius:999px;
+    background:linear-gradient(90deg, var(--maroon), var(--gold));
+  }
+
+  /* ABOUT */
+  .about-grid{
+    display:grid; grid-template-columns:minmax(280px,400px) 1fr;
+    gap:clamp(36px,5vw,56px); align-items:center;
+  }
+  .about-photo{
+    width:100%; border-radius:var(--radius);
+    box-shadow:var(--shadow-lg);
+    border:3px solid rgba(255,255,255,0.8);
+    transition:transform var(--transition), box-shadow var(--transition);
+  }
+  .about-photo:hover{
+    transform:translateY(-4px);
+    box-shadow:var(--shadow-xl);
+  }
+  .about-text{
+    background:rgba(255,255,255,0.55);
+    border:1px solid rgba(92,27,35,0.07);
+    border-radius:var(--radius);
+    padding:clamp(24px,3vw,36px);
+    box-shadow:var(--shadow-sm);
+  }
+  .about-text p{ margin-bottom:20px; line-height:1.9; font-size:16px; }
+  .about-text p:last-child{ margin-bottom:0; }
+  .about-text .th{ color:var(--maroon); font-weight:500; }
+  .about-text .en{ color:var(--text); }
+
+  .edu-block{ margin-top:clamp(56px,8vw,80px); }
+  .edu-wrap{
+    display:grid; grid-template-columns:1.1fr 0.7fr;
+    gap:clamp(32px,5vw,50px); align-items:center;
+  }
+  .edu-cards{ display:flex; flex-direction:column; gap:22px; }
+  .edu-card{
+    background:var(--card); border-radius:var(--radius);
+    padding:28px 32px; box-shadow:var(--shadow-md);
+    border:1px solid rgba(92,27,35,0.06);
+    border-left:5px solid var(--rose);
+    transition:transform var(--transition), box-shadow var(--transition), border-left-color var(--transition);
+  }
+  .edu-card:hover{
+    transform:translateX(4px);
+    box-shadow:var(--shadow-lg);
+    border-left-color:var(--maroon);
+  }
+  .edu-card .years{
+    color:var(--rose-dark); font-weight:700; font-size:13px;
+    letter-spacing:.06em; margin-bottom:10px; text-transform:uppercase;
+  }
+  .edu-card .school{
+    font-family:'Poppins',sans-serif;
+    font-weight:700; font-size:18px; margin-bottom:6px;
+    color:var(--maroon);
+  }
+  .edu-card .detail{ font-size:14.5px; color:var(--text); line-height:1.7; }
+  .edu-photo img{
+    width:100%; border-radius:var(--radius);
+    box-shadow:var(--shadow-lg);
+    border:3px solid rgba(255,255,255,0.8);
+    transition:transform var(--transition);
+  }
+  .edu-photo img:hover{ transform:scale(1.02); }
+
+  /* SKILLS */
+  .skills-top{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:clamp(20px, 3vw, 32px);
+    margin-bottom:60px;
+    align-items:stretch;
+  }
+  .skill-col{
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+  }
+  .skill-col-title{
+    font-family:'Poppins',sans-serif; font-weight:800;
+    font-size:clamp(16px, 1.8vw, 22px); color:var(--maroon);
+    letter-spacing:.02em; line-height:1.25;
+    margin-bottom:16px; text-transform:uppercase;
+    min-height: 52px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .skill-card{
+    background:var(--card); border-radius:var(--radius);
+    padding:24px 28px; box-shadow:var(--shadow-md);
+    border:1px solid rgba(92,27,35,0.06);
+    text-align:left;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    transition:transform var(--transition), box-shadow var(--transition);
+  }
+  .skill-card:hover{
+    transform:translateY(-5px);
+    box-shadow:var(--shadow-lg);
+  }
+  .skill-card ul{
+    width: 100%;
+  }
+  .skill-card li{
+    padding:8px 0; font-size:15px; color:var(--text);
+    position:relative; padding-left:22px;
+    border-bottom:1px solid rgba(92,27,35,0.05);
+  }
+  .skill-card li:last-child{ border-bottom:none; }
+  .skill-card li::before{
+    content:""; position:absolute; left:0; top:50%;
+    transform:translateY(-50%);
+    width:7px; height:7px; border-radius:50%;
+    background:linear-gradient(135deg, var(--rose), var(--maroon));
+  }
+  .tools-block{ text-align:center; margin-top:20px; }
+  .tools-title{
+    font-family:'Poppins',sans-serif; font-weight:800;
+    font-size:clamp(20px,2.4vw,28px); color:var(--maroon);
+    letter-spacing:.01em; margin-bottom:22px; text-transform:uppercase;
+  }
+  .tools-card{
+    background:var(--card); border-radius:var(--radius);
+    padding:clamp(28px,4vw,40px) clamp(28px,4vw,44px);
+    box-shadow:var(--shadow-md);
+    border:1px solid rgba(92,27,35,0.06);
+    text-align:left; max-width:960px; margin:0 auto;
+    transition:box-shadow var(--transition);
+  }
+  .tools-card:hover{ box-shadow:var(--shadow-lg); }
+  .tools-card ul{ display:flex; flex-direction:column; gap:14px; }
+  .tools-card li{
+    font-size:15.5px; line-height:1.75; color:var(--text);
+    position:relative; padding-left:20px;
+    padding-bottom:14px;
+    border-bottom:1px dashed rgba(92,27,35,0.1);
+  }
+  .tools-card li:last-child{ border-bottom:none; padding-bottom:0; }
+  .tools-card li::before{
+    content:""; position:absolute; left:0; top:10px;
+    width:6px; height:6px; border-radius:1px;
+    background:var(--gold); transform:rotate(45deg);
+  }
+  .tools-card b{ color:var(--maroon); font-weight:700; }
+
+  /* PROJECTS */
+  .proj-sub{
+    font-size:clamp(20px,2.5vw,24px); font-weight:800;
+    margin:56px 0 28px;
+    color:var(--maroon); font-family:'Poppins',sans-serif;
+    display:flex; align-items:center; gap:14px;
+  }
+  .proj-sub::before{
+    content:""; flex:0 0 32px; height:3px;
+    background:linear-gradient(90deg, var(--gold), transparent);
+    border-radius:999px;
+  }
+  .proj-sub:first-of-type{ margin-top:0; }
+  .proj-list{
+    display:flex; flex-direction:column; gap:48px;
+  }
+  .proj-card{
+    position:relative;
+    background:var(--cream-card);
+    border:1.5px solid var(--maroon-deep);
+    border-radius:28px;
+    padding:clamp(28px,4vw,48px);
+    box-shadow:var(--shadow-md);
+    transition:transform var(--transition), box-shadow var(--transition);
+  }
+  .proj-card:hover{
+    box-shadow:var(--shadow-lg);
+  }
+  .proj-card.highlight{
+    margin-top:18px;
+    padding-top:clamp(36px,4.5vw,52px);
+    border-color:var(--maroon);
+    background:linear-gradient(135deg, var(--cream-card) 0%, rgba(235,224,211,0.35) 100%);
+  }
+  .proj-inner{
+    display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);
+    gap:clamp(28px,4vw,48px); align-items:center;
+  }
+  .proj-preview-frame{
+    background:#fff; border-radius:20px; overflow:hidden;
+    box-shadow:var(--shadow-lg);
+    border:1px solid rgba(92,27,35,0.06);
+    transition:transform var(--transition);
+    cursor:pointer;
+  }
+  .proj-card:hover .proj-preview-frame{ transform:scale(1.01); }
+  .proj-preview-frame img{
+    width:100%; height:auto; display:block;
+    aspect-ratio:16/10; object-fit:cover;
+    transition:opacity 0.2s ease;
+  }
+  .proj-title{
+    font-family:'Poppins',sans-serif; font-size:clamp(26px,3vw,34px);
+    font-weight:800; color:var(--maroon); line-height:1.15; margin-bottom:8px;
+  }
+  .proj-subtitle{
+    font-size:15px; font-weight:600; color:var(--rose-dark);
+    margin-bottom:18px; line-height:1.5;
+  }
+  .proj-desc{
+    font-size:15px; color:var(--text); line-height:1.8;
+    margin-bottom:22px;
+  }
+  .proj-tags{
+    display:flex; flex-wrap:wrap; gap:10px; margin-bottom:22px;
+  }
+  .proj-tag{
+    background:var(--rose-light); color:#5a2323;
+    font-size:12.5px; font-weight:600; padding:7px 14px;
+    border-radius:999px; white-space:nowrap;
+    border:1px solid rgba(212,163,115,0.25);
+    transition:background var(--transition), transform var(--transition);
+  }
+  .proj-tag:hover{
+    background:var(--gold-soft);
+    transform:translateY(-1px);
+  }
+  .proj-thumbs{
+    display:flex; flex-wrap:wrap; gap:10px; margin-bottom:26px;
+  }
+  .proj-thumbs img{
+    width:72px; height:48px; object-fit:cover;
+    border-radius:8px; border:1.5px solid rgba(92,27,35,0.12);
+    background:#fff;
+    transition:transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    cursor:pointer;
+  }
+  .proj-thumbs img:hover, .proj-thumbs img.active-thumb{
+    transform:translateY(-3px) scale(1.04);
+    box-shadow:var(--shadow-sm);
+    border-color:var(--maroon);
+  }
+  .proj-actions{
+    display:flex; flex-wrap:wrap; gap:12px;
+  }
+  .proj-btn{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--maroon); color:#fff;
+    font-family:'Poppins',sans-serif; font-size:13.5px; font-weight:600;
+    padding:12px 22px; border-radius:999px;
+    transition:background var(--transition), transform var(--transition), box-shadow var(--transition);
+    box-shadow:0 4px 14px rgba(45,41,38,0.2);
+  }
+  .proj-btn:hover{
+    background:var(--maroon-deep);
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(92,27,35,0.25);
+  }
+  .proj-btn svg{ flex-shrink:0; }
+
+  /* LIGHTBOX MODAL STRUCTURE (สไตล์เดียวกับไฟล์อ้างอิง) */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+  }
+
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 85%;
+    max-height: 80vh;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    object-fit: contain;
+  }
+
+  .modal-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #fff;
+    padding: 15px 0;
+    font-size: 1.1rem;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s;
+  }
+  .modal-close:hover {
+    color: var(--gold);
+  }
+
+  /* ACTIVITIES */
+  .activity{
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:clamp(32px,4vw,44px); align-items:center;
+    margin-bottom:60px;
+    padding:clamp(20px,3vw,28px);
+    border-radius:var(--radius);
+    transition:background var(--transition);
+  }
+  .activity:hover{
+    background:rgba(255,255,255,0.35);
+  }
+  .activity.reverse .act-img{ order:2; }
+  .activity.reverse .act-text{ order:1; }
+  .act-img{
+    overflow:hidden; border-radius:var(--radius);
+    box-shadow:var(--shadow-lg);
+    border:3px solid rgba(255,255,255,0.75);
+    cursor: pointer;
+  }
+  .act-img img{
+    width:100%; display:block;
+    transition:transform 0.5s var(--ease);
+  }
+  .activity:hover .act-img img{ transform:scale(1.03); }
+  .act-text .date{
+    display:inline-block;
+    font-weight:700; color:var(--rose-dark);
+    margin-bottom:12px; font-size:13px; letter-spacing:.06em;
+    text-transform:uppercase;
+    background:var(--gold-soft);
+    padding:5px 12px; border-radius:999px;
+  }
+  .act-text .title{
+    font-family:'Poppins',sans-serif;
+    font-weight:700; font-size:20px; margin-bottom:12px;
+    color:var(--maroon); line-height:1.35;
+  }
+  .act-text p.desc{ font-size:15px; line-height:1.85; color:var(--text); }
+  .act-pair{
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:clamp(28px,4vw,44px);
+  }
+  .act-pair .activity{
+    grid-template-columns:1fr; margin-bottom:0; text-align:center;
+    background:rgba(255,255,255,0.4);
+    border:1px solid rgba(92,27,35,0.06);
+    box-shadow:var(--shadow-sm);
+  }
+  .act-pair .act-text{ order:2 !important; }
+  .act-pair .act-img{ order:1 !important; }
+
+  /* CERTS */
+  .cert{
+    display:grid; grid-template-columns:minmax(280px,480px) 1fr;
+    gap:clamp(32px,4vw,44px); align-items:center;
+    margin-bottom:60px;
+    padding:clamp(20px,3vw,28px);
+    background:rgba(255,255,255,0.45);
+    border:1px solid rgba(92,27,35,0.06);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow-sm);
+    transition:transform var(--transition), box-shadow var(--transition);
+  }
+  .cert:hover{
+    transform:translateY(-3px);
+    box-shadow:var(--shadow-md);
+  }
+  .cert img{
+    width:100%; border-radius:var(--radius-sm);
+    box-shadow:var(--shadow-md);
+    border:2px solid rgba(255,255,255,0.8);
+    cursor: pointer;
+  }
+  .cert p{
+    font-size:15.5px; line-height:1.9; color:var(--text);
+  }
+
+  /* CONTACT */
+  .contact-grid{
+    display:grid; grid-template-columns:1fr 1.3fr;
+    gap:clamp(36px,5vw,50px); align-items:center;
+  }
+  .contact-list{ display:flex; flex-direction:column; gap:22px; margin-top:26px; }
+  .contact-item{
+    display:flex; align-items:center; gap:16px;
+    padding:14px 18px;
+    background:rgba(255,255,255,0.5);
+    border:1px solid rgba(92,27,35,0.07);
+    border-radius:var(--radius-sm);
+    transition:transform var(--transition), box-shadow var(--transition), background var(--transition);
+  }
+  .contact-item:hover{
+    transform:translateX(6px);
+    background:#fff;
+    box-shadow:var(--shadow-sm);
+  }
+  .icon-circ{
+    width:46px; height:46px; border-radius:50%;
+    border:2px solid var(--maroon);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    background:rgba(255,255,255,0.8);
+    transition:background var(--transition), color var(--transition), transform var(--transition);
+  }
+  .contact-item:hover .icon-circ{
+    background:var(--maroon); color:#fff;
+    transform:scale(1.05);
+  }
+  .contact-item:hover .icon-circ svg{
+    stroke:#fff;
+    fill:#fff;
+  }
+  .contact-item span{ font-size:16px; font-weight:500; color:var(--maroon); }
+  .contact-photos{ display:flex; gap:16px; align-items:flex-end; }
+  .contact-photos img{
+    border-radius:16px; box-shadow:var(--shadow-lg);
+    object-fit:cover;
+    border:3px solid rgba(255,255,255,0.85);
+    transition:transform var(--transition), box-shadow var(--transition);
+    cursor: pointer;
+  }
+  .contact-photos img:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow-xl);
+  }
+  .contact-photos img:nth-child(1){ width:32%; aspect-ratio:.78; margin-bottom:14%; }
+  .contact-photos img:nth-child(2){ width:36%; aspect-ratio:.78; }
+  .contact-photos img:nth-child(3){ width:32%; aspect-ratio:.78; margin-bottom:14%; }
+
+  footer{
+    text-align:center;
+    padding:36px 20px 48px;
+    font-size:13px; color:var(--rose-dark);
+    border-top:1px solid rgba(92,27,35,0.08);
+    background:rgba(255,255,255,0.25);
+    letter-spacing:.03em;
+  }
+
+  @media (max-width: 880px){
+    nav{ justify-content:center; padding:14px 18px; }
+    nav a{ font-size:12px; padding:7px 12px; }
+    .about-grid, .edu-wrap, .cert, .contact-grid{ grid-template-columns:1fr !important; }
+    .activity{ grid-template-columns:1fr !important; }
+    .activity.reverse .act-img, .activity.reverse .act-text{ order:initial; }
+    .skills-top{ grid-template-columns:1fr; }
+    .skill-col-title{ min-height: auto; margin-bottom: 12px; }
+    .act-pair{ grid-template-columns:1fr; }
+    .proj-inner{ grid-template-columns:1fr; }
+    section{ padding:64px 22px; }
+    .cert{ margin-bottom:40px; }
+    .about-photo{ max-width:320px; margin:0 auto; }
+    .edu-photo img{ max-width:320px; margin:0 auto; }
+    .contact-item:hover{ transform:none; }
+    .hero-photo-wrap{ margin-top:0; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{
+      animation-duration:0.01ms !important;
+      transition-duration:0.01ms !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav id="navbar">
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#activities">Activities</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HOME -->
+<section id="home">
+  <div class="hero-title">PORTFOLIO</div>
+  <div class="hero-photo-wrap">
+    <img src="https://i.postimg.cc/Z5Nn4HjP/Screenshot-2026-07-29-004442.png" alt="Nattaya Asavadechathawat">
+  </div>
+  <div class="name-arc">
+    <svg viewBox="0 0 640 90">
+      <path id="arcPath" d="M 30 15 Q 320 110 610 15" fill="transparent"/>
+      <text>
+        <textPath href="#arcPath" startOffset="50%" text-anchor="middle">NATTAYA ASAVADECHATHAWAT</textPath>
+      </text>
+    </svg>
+  </div>
+  <p class="hero-tagline">Information Technology Student · Web &amp; UX Design</p>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="sec-title">About Me</h2>
+  <div class="about-grid">
+    <img class="about-photo" src="https://i.postimg.cc/d1VJkjRz/Screenshot-2026-07-29-004450.png" alt="Nattaya - uniform">
+    <div class="about-text">
+      <p class="th">สวัสดีค่ะ ดิฉันนางสาวณัฐธยาน์ อัศวเดชาธวัช กำลังศึกษาอยู่ชั้นปีที่ 4 คณะเทคโนโลยีสารสนเทศและนวัตกรรม สาขาเทคโนโลยีสารสนเทศ มหาวิทยาลัยกรุงเทพ ดิฉันมีความสนใจและเชี่ยวชาญด้านการออกแบบและการพัฒนาเว็บไซต์ รวมถึงการออกแบบโครงสร้างฐานข้อมูล นอกจากนี้ยังเป็นคนพร้อมเรียนรู้สิ่งใหม่ ๆ อยู่เสมอ เพราะเชื่อว่าเทคโนโลยีและการเรียนรู้ไม่มีที่สิ้นสุด <br> จากประสบการณ์การทำงานกลุ่มที่ผ่านมา ดิฉันได้รับบทบาทเป็นผู้นำอยู่บ่อยครั้ง จึงมีทักษะในการบริหารจัดการ วางแผน และมอบหมายงานให้แก่สมาชิกในทีมได้อย่างมีประสิทธิภาพค่ะ</p>
+      <p class="en">Hello, my name is Nattaya Asavadechathawat. I am currently a fourth-year student majoring in Information Technology at the School of Information Technology and Innovation, Bangkok University. I have a strong passion for web design and development, as well as database architecture design. On top of that, I am always eager to learn new things, as I strongly believe that learning and technology have no limits. Throughout my academic journey, I have frequently stepped into leadership roles for group projects. This has allowed me to develop solid skills in project coordination, task delegation, and managing team dynamics effectively.</p>
+    </div>
+  </div>
+
+  <div class="edu-block">
+    <h2 class="sec-title">Education</h2>
+    <div class="edu-wrap">
+      <div class="edu-cards">
+        <div class="edu-card">
+          <div class="years">2023 — Recently</div>
+          <div class="school">Bangkok University</div>
+          <div class="detail">Bachelor of Science in Information Technology<br>School of Information Technology and Innovation<br>GPA: 3.60</div>
+        </div>
+        <div class="edu-card">
+          <div class="years">2016 — 2022</div>
+          <div class="school">Triam Udom Suksha Pattanakarn Khelang Nakorn School</div>
+          <div class="detail">Program: English – Business – Chinese<br>GPA: 3.73</div>
+        </div>
+      </div>
+      <div class="edu-photo">
+        <img src="https://i.postimg.cc/pV9psP8w/Screenshot-2026-07-29-004459.png" alt="Nattaya - uniform">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2 class="sec-title">Skills</h2>
+  <div class="skills-top">
+    <div class="skill-col">
+      <div class="skill-col-title">Languages</div>
+      <div class="skill-card">
+        <ul>
+          <li>Thai (Native)</li>
+          <li>English (Intermediate)</li>
+          <li>Chinese (Elementary)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="skill-col">
+      <div class="skill-col-title">Programming &amp;<br>Databases</div>
+      <div class="skill-card">
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>SQL (MySQL)</li>
+          <li>Python</li>
+        </ul>
+      </div>
+    </div>
+    <div class="skill-col">
+      <div class="skill-col-title">Frameworks &amp;<br>Libraries</div>
+      <div class="skill-card">
+        <ul>
+          <li>Vue.js</li>
+          <li>Nuxt.js</li>
+          <li>Bootstrap</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="tools-block">
+    <div class="tools-title">Tools &amp; Technologies</div>
+    <div class="tools-card">
+      <ul>
+        <li><b>Development &amp; Version Control:</b> VS Code, Git, GitHub, Postman, Docker</li>
+        <li><b>Design &amp; UI/UX:</b> Figma, Adobe Photoshop, Adobe Illustrator</li>
+        <li><b>Automation &amp; Low-Code:</b> UiPath, AppSheet</li>
+        <li><b>Productivity:</b> MS Excel, MS Word, Google Sheets, Google Colab</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2 class="sec-title">Projects</h2>
+
+  <div class="proj-sub">Websites</div>
+  <div class="proj-list">
+    <article class="proj-card">
+      <div class="proj-inner">
+        <div class="proj-preview">
+          <div class="proj-preview-frame">
+            <img src="https://i.postimg.cc/bwCGCMZc/image.png" alt="LOCKSYNC Preview">
+          </div>
+        </div>
+        <div class="proj-details">
+          <h3 class="proj-title">LOCKSYNC</h3>
+          <p class="proj-subtitle">Market Stall Booking Platform</p>
+          <p class="proj-desc">พัฒนาเว็บไซต์จองล็อคตลาดนัด LOCKSYNC (Frontend)</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Frontend</span>
+            <span class="proj-tag">Nuxt.js</span>
+            <span class="proj-tag">Vue.js</span>
+            <span class="proj-tag">JavaScript</span>
+            <span class="proj-tag">HTML</span>
+            <span class="proj-tag">CSS</span>
+          </div>
+          <div class="proj-thumbs">
+            <img src="https://i.postimg.cc/WzgWSg86/image.png" alt="LOCKSYNC preview 1">
+            <img src="https://i.postimg.cc/VN0N7NyP/image.png" alt="LOCKSYNC preview 2">
+            <img src="https://i.postimg.cc/Ss0xHpqH/image.png" alt="LOCKSYNC preview 3">
+          </div>
+          <div class="proj-actions">
+            <a href="https://locksync-gtvy.onrender.com/index.html" class="proj-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Website
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj-card">
+      <div class="proj-inner">
+        <div class="proj-preview">
+          <div class="proj-preview-frame">
+            <img src="https://i.postimg.cc/tbrf3jzw/image.png" alt="ROOMIO Main">
+          </div>
+        </div>
+        <div class="proj-details">
+          <h3 class="proj-title">ROOMIO</h3>
+          <p class="proj-subtitle">Accommodation Booking Website</p>
+          <p class="proj-desc">พัฒนาเว็บไซต์จองที่พัก ROOMIO (Frontend)</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Frontend</span>
+            <span class="proj-tag">Nuxt.js</span>
+            <span class="proj-tag">Vue.js</span>
+            <span class="proj-tag">JavaScript</span>
+            <span class="proj-tag">HTML</span>
+            <span class="proj-tag">CSS</span>
+          </div>
+          <div class="proj-thumbs">
+            <img src="https://i.postimg.cc/ZRkvxsH0/image.png" alt="ROOMIO preview 1">
+            <img src="https://i.postimg.cc/VsW0XRCs/image.png" alt="ROOMIO preview 2">
+            <img src="https://i.postimg.cc/3xdy5Qbr/image.png" alt="ROOMIO preview 3">
+            <img src="https://i.postimg.cc/q72v4Jch/image.png" alt="ROOMIO preview 4">
+            <img src="https://i.postimg.cc/qv3kxJ5c/image.png" alt="ROOMIO preview 5">
+          </div>
+          <div class="proj-actions">
+            <a href="https://roomio-frontend.onrender.com/" class="proj-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Website
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj-card">
+      <div class="proj-inner">
+        <div class="proj-preview">
+          <div class="proj-preview-frame">
+            <img src="https://i.postimg.cc/YjYkTnr1/image.png" alt="SUSHIMO Main">
+          </div>
+        </div>
+        <div class="proj-details">
+          <h3 class="proj-title">SUSHIMO</h3>
+          <p class="proj-subtitle">Food Ordering Website</p>
+          <p class="proj-desc">พัฒนาเว็บไซต์สั่งอาหาร SUSHIMO (Frontend)</p>
+          <div class="proj-tags">
+            <span class="proj-tag">React</span>
+            <span class="proj-tag">Frontend</span>
+            <span class="proj-tag">E-commerce</span>
+            <span class="proj-tag">UI/UX</span>
+          </div>
+          <div class="proj-thumbs">
+            <img src="https://i.postimg.cc/RNTmZWJy/image.png" alt="SUSHIMO preview 1">
+            <img src="https://i.postimg.cc/KKCSHLC1/image.png" alt="SUSHIMO preview 2">
+            <img src="https://i.postimg.cc/vT1Gt8C6/image.png" alt="SUSHIMO preview 3">
+            <img src="https://i.postimg.cc/NL6qdKDx/image.png" alt="SUSHIMO preview 4">
+          </div>
+          <div class="proj-actions">
+            <a href="https://sushimo-shop.vercel.app/%2F/menus/" class="proj-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Website
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj-card">
+      <div class="proj-inner">
+        <div class="proj-preview">
+          <div class="proj-preview-frame">
+            <img src="https://i.postimg.cc/CLHYxq05/image.png" alt="ROOMIO Main">
+          </div>
+        </div>
+        <div class="proj-details">
+          <h3 class="proj-title">WALLET TRACK</h3>
+          <p class="proj-subtitle">Serverless Expense Tracker</p>
+          <p class="proj-desc">พัฒนาเว็บแอปพลิเคชันสำหรับติดตามรายรับ–รายจ่าย ที่สามารถนำเข้าข้อมูลจากไฟล์ บันทึกข้อมูลอัตโนมัติ และแจ้งเตือนเมื่อค่าใช้จ่ายเกินงบประมาณ เพื่อช่วยในการวางแผนและควบคุมการเงิน</p>
+          <div class="proj-tags">
+            <span class="proj-tag">AWS</span>
+            <span class="proj-tag">Python</span>
+            <span class="proj-tag">DynamoDB</span>
+            <span class="proj-tag">Postman</span>
+  
+          </div>
+       
+          <div class="proj-actions">
+            <a href="https://nattayaasav.github.io/wallet-track/" class="proj-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Website
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="proj-sub">Designs (Figma)</div>
+  <div class="proj-list">
+    <article class="proj-card">
+      <div class="proj-inner">
+        <div class="proj-preview">
+          <div class="proj-preview-frame">
+            <img src="https://i.postimg.cc/3wR3MfDW/image.png" alt="DAILY UI Main">
+          </div>
+        </div>
+        <div class="proj-details">
+          <h3 class="proj-title">DAILY UI</h3>
+          <p class="proj-subtitle">10-Day Daily UI Challenge Collection</p>
+          <p class="proj-desc">ออกแบบ Daily UI 10 วัน</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Figma Design</span>
+            <span class="proj-tag">UX/UI</span>
+            <span class="proj-tag">Prototyping</span>
+            <span class="proj-tag">Wireframe</span>
+          </div>
+          <div class="proj-thumbs">
+            <img src="https://i.postimg.cc/wTpyKHxx/Screenshot-2026-07-29-151812.png" alt="Daily UI preview 1">
+            <img src="https://i.postimg.cc/VLvyk0kH/Screenshot-2026-07-29-151819.png" alt="Daily UI preview 2">
+            <img src="https://i.postimg.cc/7hbBw7n0/Screenshot-2026-07-29-151827.png" alt="Daily UI preview 3">
+            <img src="https://i.postimg.cc/7ZSKHqSD/Screenshot-2026-07-29-151837.png" alt="Daily UI preview 4">
+            <img src="https://i.postimg.cc/pLMB134z/Screenshot-2026-07-29-151848.png" alt="Daily UI preview 5">
+          </div>
+          <div class="proj-actions">
+            <a href="https://www.figma.com/design/szBREQtP4de2lBBXh4cPTc/Daily-UI?node-id=6-2&t=LruGnr6YljaeUKT6-1" class="proj-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 24a4 4 0 0 0 4-4v-4H8v8zm0-12h4V8a4 4 0 1 0-4 4h4zm0-4V0h4a4 4 0 0 1 0 8H8zm8 4a4 4 0 1 1-8 0 4 4 0 0 1 8 0zm-4 8a4 4 0 0 0 4-4h-4v4z"/></svg>
+              Figma Design
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj-card">
+      <div class="proj-inner">
+        <div class="proj-preview">
+          <div class="proj-preview-frame">
+            <img src="https://i.postimg.cc/0NjjPyJH/image.png" alt="ROOMIO Figma Main">
+          </div>
+        </div>
+        <div class="proj-details">
+          <h3 class="proj-title">ROOMIO</h3>
+          <p class="proj-subtitle">Accommodation Booking UX/UI Design</p>
+          <p class="proj-desc">ออกแบบ UX/UI เว็บไซต์จองที่พัก Roomio</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Figma Design</span>
+            <span class="proj-tag">UX/UI</span>
+            <span class="proj-tag">Prototyping</span>
+            <span class="proj-tag">Wireframe</span>
+          </div>
+          <div class="proj-thumbs">
+            <img src="https://i.postimg.cc/yN21KXKx/image.png" alt="Roomio preview 1">
+            <img src="https://i.postimg.cc/DwHk4vMX/image.png" alt="Roomio preview 2">
+            <img src="https://i.postimg.cc/Yq0sNcgz/image.png" alt="Roomio preview 3">
+            <img src="https://i.postimg.cc/8kKyzy3k/image.png" alt="Roomio preview 4">
+            <img src="https://i.postimg.cc/k5SNFC7p/image.png" alt="Roomio preview 5">
+          </div>
+          <div class="proj-actions">
+            <a href="https://www.figma.com/design/fd0QXnL2z7f7z1eJQYSoWs/Untitled?node-id=0-1&t=LruGnr6YljaeUKT6-1" class="proj-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 24a4 4 0 0 0 4-4v-4H8v8zm0-12h4V8a4 4 0 1 0-4 4h4zm0-4V0h4a4 4 0 0 1 0 8H8zm8 4a4 4 0 1 1-8 0 4 4 0 0 1 8 0zm-4 8a4 4 0 0 0 4-4h-4v4z"/></svg>
+              Figma Design
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj-card">
+      <div class="proj-inner">
+        <div class="proj-preview">
+          <div class="proj-preview-frame">
+            <img src="https://i.postimg.cc/Vkm5Hc9Z/image.png" alt="UNI EATS Main"> 
+          </div>
+        </div>
+        <div class="proj-details">
+          <h3 class="proj-title">UNI EATS</h3>
+          <p class="proj-subtitle">Food Ordering App UX/UI Design</p>
+          <p class="proj-desc">ออกแบบ UX/UI แอปพลิเคชันสั่งอาหาร UNI EATS</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Figma Design</span>
+            <span class="proj-tag">UX/UI</span>
+            <span class="proj-tag">Prototyping</span>
+            <span class="proj-tag">Wireframe</span>
+          </div>
+          <div class="proj-thumbs">
+            <img src="https://i.postimg.cc/7JLF4Ywk/image.png" alt="UNI EATS preview 1">
+            <img src="https://i.postimg.cc/0yyPw50s/image.png" alt="UNI EATS preview 2">
+          </div>
+          <div class="proj-actions">
+            <a href="https://www.figma.com/design/qBX8hIqPsD6xqt6SgqcKLE/Untitled?t=LruGnr6YljaeUKT6-1" class="proj-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 24a4 4 0 0 0 4-4v-4H8v8zm0-12h4V8a4 4 0 1 0-4 4h4zm0-4V0h4a4 4 0 0 1 0 8H8zm8 4a4 4 0 1 1-8 0 4 4 0 0 1 8 0zm-4 8a4 4 0 0 0 4-4h-4v4z"/></svg>
+              Figma Design
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj-card highlight">
+      <div class="proj-inner">
+        <div class="proj-preview">
+          <div class="proj-preview-frame">
+            <img src="https://i.postimg.cc/Hk8H2ZFD/image.png" alt="KINOF Booking Lab Main">
+          </div>
+        </div>
+        <div class="proj-details">
+          <h3 class="proj-title">KINOF BOOKING LAB</h3>
+          <p class="proj-subtitle">Smart LAB Management System with Real-Time Booking & Analytics</p>
+          <p class="proj-desc">พัฒนาระบบ Smart Lab Booking System สำหรับจองห้องแล็บออนไลน์ รองรับการจองแบบ Real-time พร้อมระบบจัดการห้องแล็บ ตารางเวลา และ Dashboard สำหรับ Admin เพื่อติดตามการใช้งานและวิเคราะห์ข้อมูล</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Figma Design</span>
+            <span class="proj-tag">UX/UI</span>
+            <span class="proj-tag">Prototyping</span>
+            <span class="proj-tag">Wireframe</span>
+          </div>
+          <div class="proj-thumbs">
+            <img src="https://i.postimg.cc/Vdqqw9Zf/image.png" alt="KINOF Booking Lab preview 1">
+            <img src="https://i.postimg.cc/CZ1kb3hz/image.png" alt="KINOF Booking Lab preview 2">
+            <img src="https://i.postimg.cc/64sZJTdQ/image.png" alt="KINOF Booking Lab preview 3">
+            <img src="https://i.postimg.cc/D8PXHvmz/image.png" alt="KINOF Booking Lab preview 4">
+            <img src="https://i.postimg.cc/zL6bK3P5/image.png" alt="KINOF Booking Lab preview 5">
+          </div>
+          <div class="proj-actions">
+            <a href="https://www.figma.com/design/bCdzMs0Nprz7OKojGeDf0T/KINOF-Group?t=LruGnr6YljaeUKT6-1" class="proj-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 24a4 4 0 0 0 4-4v-4H8v8zm0-12h4V8a4 4 0 1 0-4 4h4zm0-4V0h4a4 4 0 0 1 0 8H8zm8 4a4 4 0 1 1-8 0 4 4 0 0 1 8 0zm-4 8a4 4 0 0 0 4-4h-4v4z"/></svg>
+              Figma Design
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj-card highlight">
+      <div class="proj-inner">
+        <div class="proj-preview">
+          <div class="proj-preview-frame">
+            <img src="https://i.postimg.cc/855X4kbg/image.png" alt="Rose Shop Main">
+          </div>
+        </div>
+        <div class="proj-details">
+          <h3 class="proj-title">Rose Shop</h3>
+          <p class="proj-subtitle">E-commerce App UX/UI Design</p>
+          <p class="proj-desc">ออกแบบ UX/UI แอปพลิเคชันช้อปปิ้งออนไลน์ เน้นการจัดหมวดหมู่สินค้าที่ชัดเจน หน้าจอรายละเอียดสินค้าที่ดูง่าย</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Figma Design</span>
+            <span class="proj-tag">UX/UI</span>
+            <span class="proj-tag">Prototyping</span>
+            <span class="proj-tag">Wireframe</span>
+          </div>
+          <div class="proj-thumbs">
+            <img src="https://i.postimg.cc/9z3xcdHW/image.png" alt="Rose Shop preview 1">
+            <img src="https://i.postimg.cc/RCj9W2Mg/image.png" alt="Rose Shop preview 2">
+          </div>
+          <div class="proj-actions">
+            <a href="https://www.figma.com/design/N4HYjJ2z8w50hp8iKotw4U/Rose-Store?t=LruGnr6YljaeUKT6-1" class="proj-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 24a4 4 0 0 0 4-4v-4H8v8zm0-12h4V8a4 4 0 1 0-4 4h4zm0-4V0h4a4 4 0 0 1 0 8H8zm8 4a4 4 0 1 1-8 0 4 4 0 0 1 8 0zm-4 8a4 4 0 0 0 4-4h-4v4z"/></svg>
+              Figma Design
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ACTIVITIES -->
+<section id="activities">
+  <h2 class="sec-title">Activities</h2>
+
+  <div class="activity">
+    <div class="act-img"><img src="https://i.postimg.cc/7ZcKDXB1/S-57155590.jpg" alt="Cybersecurity Day & IT Empowering"></div>
+    <div class="act-text">
+      <div class="date">วันที่ 9 พฤษภาคม 2568</div>
+      <div class="title">Cybersecurity Day &amp; IT Empowering / Mini Job Fair for Tech Industry</div>
+      <p class="desc">เข้าร่วมงาน "Cybersecurity Day &amp; IT Empowering" และ Mini Job Fair for Tech Industry ร่วมกับเวิร์คอินเทค ร่วมพูดคุยสร้างเครือข่ายกับตัวแทนจากบริษัทชั้นนำในอุตสาหกรรมไอที พร้อมรับฟังข้อมูลเชิงลึกเกี่ยวกับความต้องการของตลาดแรงงานและเส้นทางอาชีพสายเทคโนโลยี</p>
+    </div>
+  </div>
+
+  <div class="act-pair">
+    <div class="activity">
+      <div class="act-img"><img src="https://i.postimg.cc/pVYc8fTL/S-57155588.jpg" alt="BU Cyber Fortress Challenge & Career Expo"></div>
+      <div class="act-text">
+        <div class="date">วันที่ 10 กุมภาพันธ์ 2569</div>
+        <div class="title">BU Cyber Fortress Challenge &amp; Career Expo</div>
+        <p class="desc">ได้พูดคุยกับ HR และพี่ๆ จากบริษัทชั้นนำโดยตรง เพื่อรับทราบ requirements จริงในการ<br>เตรียมตัวก่อนออกฝึกงาน/สหกิจศึกษา</p>
+      </div>
+    </div>
+    <div class="activity">
+      <div class="act-img"><img src="https://i.postimg.cc/BZc7DT66/S-57155589.jpg" alt="IT Empowering Day: In the Era of AI"></div>
+      <div class="act-text">
+        <div class="date">วันที่ 21 พฤษภาคม 2569</div>
+        <div class="title">IT Empowering Day: In the Era of AI</div>
+        <p class="desc">เพื่อมุ่งส่งเสริมศักยภาพนักศึกษาในการประยุกต์ใช้เทคโนโลยีปัญญาประดิษฐ์ (AI) ในภาคอุตสาหกรรมจริง และเตรียมความพร้อมทักษะสำหรับการทำงานในอนาคต</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <h2 class="sec-title">Certifications</h2>
+
+  <div class="cert">
+    <img src="https://i.postimg.cc/3RM7yXwz/bi-pra-kasn-yb-tr-(1).png" alt="Cybersecurity Foundation Course Certificate">
+    <p>ได้รับใบประกาศนียบัตรผ่านการอบรม หลักสูตรด้านความมั่นคงปลอดภัยไซเบอร์ระดับพื้นฐาน (Cybersecurity Foundation Course) รวม 21 ชั่วโมง จากสำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติ (สกมช. / NCSA) เพื่อเสริมสร้างความรู้พื้นฐานด้านการรักษาความปลอดภัยบนระบบดิจิทัลและการป้องกันภัยคุกคามทางไซเบอร์</p>
+  </div>
+
+  <div class="cert">
+    <img src="https://i.postimg.cc/bJX8Gxv2/certificate-1.png" alt="A Next Decade of T-Experience Certificate">
+    <p>ได้รับใบประกาศนียบัตรผ่านหลักสูตร "A Next Decade of T-Experience: ทศวรรษถัดไปแห่งเทคโนโลยีและการออกแบบประสบการณ์" จาก CEA Online Academy (TCDC) เพื่ออัปเดตเทรนด์เทคโนโลยีแห่งอนาคตและเสริมสร้างแนวคิดการออกแบบประสบการณ์ผู้ใช้ (Experience Design / UX) นำมาประยุกต์ใช้ในการพัฒนาผลิตภัณฑ์ดิจิทัลให้ตอบโจทย์ผู้ใช้งานมากยิ่งขึ้น</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="sec-title">Contact Me</h2>
+  <div class="contact-grid">
+    <div>
+      <div class="contact-list">
+        <div class="contact-item">
+          <div class="icon-circ">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5c1b23" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <span>065-602-3135</span>
+        </div>
+        <div class="contact-item">
+          <div class="icon-circ">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5c1b23" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+          </div>
+          <span>nattaya.asav@bumail.net</span>
+        </div>
+        <div class="contact-item">
+          <div class="icon-circ">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5c1b23" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="4"/><text x="12" y="15" font-size="7" text-anchor="middle" fill="#5c1b23" stroke="none" font-family="Poppins">LINE</text></svg>
+          </div>
+          <span>n7452</span>
+        </div>
+        <a href="https://github.com/nattayaasav" target="_blank" rel="noopener" class="contact-item">
+          <div class="icon-circ">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#5c1b23"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </div>
+          <span>github.com/nattayaasav</span>
+        </a>
+      </div>
+    </div>
+    <div class="contact-photos">
+      <img src="https://i.postimg.cc/kGpT4cJ4/image.png" alt="Nattaya Photo 1">
+      <img src="https://i.postimg.cc/7h7PwYnG/Screenshot-2026-07-29-004515.png" alt="Nattaya Photo 2">
+      <img src="https://i.postimg.cc/RW65dXPq/Screenshot-2026-07-29-004520.png" alt="Nattaya Photo 3">
+    </div>
+  </div>
+</section>
+
+<footer>&copy; 2026 Nattaya Asavadechathawat · Portfolio</footer>
+
+<!-- Image Modal Structure (ใช้เปิดภาพขยายใหญ่ขึ้นบนหน้าจอ) -->
+<div id="imageModal" class="modal" onclick="closeModal(event)">
+  <span class="modal-close" onclick="closeModalDirect()">&times;</span>
+  <img class="modal-content" id="imgModalSrc" alt="Enlarged view">
+  <div class="modal-caption" id="imgModalCaption"></div>
+</div>
+
+<script>
+  // Scroll spy สำหรับ Navbar
+  const links = document.querySelectorAll('#navbar a');
+  const sections = Array.from(links).map(l => document.querySelector(l.getAttribute('href')));
+  window.addEventListener('scroll', () => {
+    let idx = 0;
+    const y = window.scrollY + 120;
+    sections.forEach((sec, i) => { if (sec && sec.offsetTop <= y) idx = i; });
+    links.forEach((l,i) => l.classList.toggle('active', i === idx));
+  });
+
+  // ฟังก์ชั่นเปิด Modal แสดงรูปภาพใหญ่
+  function openModal(imgElement) {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("imgModalSrc");
+    const captionText = document.getElementById("imgModalCaption");
+    
+    modal.style.display = "block";
+    modalImg.src = imgElement.src;
+    captionText.innerHTML = imgElement.alt || "";
+  }
+
+  // ฟังก์ชั่นปิด Modal
+  function closeModalDirect() {
+    document.getElementById("imageModal").style.display = "none";
+  }
+
+  function closeModal(event) {
+    if (event.target.id === "imageModal") {
+      document.getElementById("imageModal").style.display = "none";
+    }
+  }
+
+  // ปิด Modal เมื่อกดปุ่ม ESC บนคีย์บอร์ด
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeModalDirect();
+    }
+  });
+
+  // 1. จัดการการคลิกที่ภาพตัวอย่างเล็กๆ (Thumbnails) ในส่วนของ Projects
+  document.querySelectorAll('.proj-card').forEach(card => {
+    const mainImg = card.querySelector('.proj-preview-frame img');
+    const thumbs = card.querySelectorAll('.proj-thumbs img');
+
+    // คลิกภาพใหญ่ใน Card เพื่อขยาย Modal
+    if (mainImg) {
+      mainImg.addEventListener('click', () => {
+        openModal(mainImg);
+      });
+    }
+
+    // คลิกภาพเล็กๆ (Thumbnails)
+    thumbs.forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        // เปลี่ยนรูปในกรอบใหญ่ของ Card
+        if (mainImg) {
+          mainImg.src = thumb.src;
+          mainImg.alt = thumb.alt;
+        }
+        
+        // สลับสถานะ Active ของภาพเล็ก
+        thumbs.forEach(t => t.classList.remove('active-thumb'));
+        thumb.classList.add('active-thumb');
+
+        // เปิดภาพใหญ่ขึ้นหน้าจอ (Modal) ทันที
+        openModal(thumb);
+      });
+    });
+  });
+
+  // 2. เพิ่มให้รูปอื่นๆ ในเว็บ (รูปกิจกรรม, เกียรติบัตร ฯลฯ) สามารถกดเพื่อขยายใหญ่ได้เช่นกัน
+  document.querySelectorAll('.activity img, .cert img, .contact-photos img').forEach(img => {
+    img.addEventListener('click', () => {
+      openModal(img);
+    });
+  });
+</script>
+
+</body>
+</html>
